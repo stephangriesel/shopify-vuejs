@@ -15,8 +15,8 @@
     {{ current_variant.price | money }}
     <label for="Quantity">quantity</label>
     <input type="number" id="Quantity" name="quantity" value="1" min="1">
-    <button type="submit" name="add" id="AddToCart">Add to cart</button>
-    ${test}
+    <button @click="addToCart" type="submit" name="add" id="AddToCart">Add to cart</button>
+    ${ variant }
 </form>
 
 <script>
@@ -25,7 +25,31 @@
             delimiters: ['${', '}'], // vuejs uses same notation {{}} as liquid, thats we why we doing this
             data() {
                 return {
-                    test: 'vue test'
+                    variant: ""
+                }
+            },
+            created() {
+                axios.get('/products/{{ product.handle }}.js')
+                    .then(results => {
+                        console.log("get products results...", results)
+                        this.variant = results.data.variants[0].id
+                    })
+            },
+            methods: {
+                addToCart(event) {
+                    event.preventDefault()
+
+                    let data = {
+                        id: this.variant,
+                        quantity: 1
+                    }
+                    axios.post('/cart/add.js', data)
+                        .then((response) => {
+                            console.log("add to cart response...", response)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
                 }
             }
         }).mount('#add-to-cart-form')
