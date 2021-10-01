@@ -1,3 +1,4 @@
+{% comment %}
 {% for link in linklists.main-menu.links %}
 {% assign child_list_handle = link.title | handleize %}
 {% if linklists[child_list_handle].links != blank %}
@@ -10,8 +11,6 @@
 {% endif %}
 {% endfor %}
 
-<a href="/cart">cart</a>
-
 {% if shop.customer_accounts_enabled %}
 {% if customer %}
 <a href="/account">account</a>
@@ -21,3 +20,22 @@
 {{ 'register' | customer_register_link }}
 {% endif %}
 {% endif %}
+{% endcomment %}
+
+<header class="header" id="header">
+    <div class="header-inner flex space-between">
+        <div class="menu-drawer">
+            <button class="menu-button">
+                <span>Menu</span>
+            </button>
+        </div>
+        <a href="/" class="header-title">{{ shop.name }}</a>
+        <div class="cart-button-container">
+            <button class="cart-button">
+                <span>Cart</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mini-cart"></div>
+</header>

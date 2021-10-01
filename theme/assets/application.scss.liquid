@@ -111,6 +111,14 @@ body {
     font-family: "HelveticaNeueLTProBold", Helvetica, Arial, sans-serif;
 }
 
+main {
+    padding-top:72px;
+
+    @include phone {
+        padding-top:0;
+    }
+}
+
 .flex {
     display:flex;
 }
@@ -125,6 +133,36 @@ body {
 
 .half {
     width:50%;
+}
+
+/* Header */
+
+.header {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: #FFF;
+    z-index: 10;
+
+    @include phone {
+        position:static;
+    }
+}
+
+.header-inner {
+    height:72px;
+    align-items: center;
+    border-bottom: 1px solid;
+    @include phone {
+        display: none;
+    }
+}
+
+.header-title {
+    position:absolute;
+    left:50%;
+    transform: translate(-50%);
 }
 
 /* Product Page */
