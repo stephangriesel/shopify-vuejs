@@ -135,6 +135,10 @@ main {
     width:50%;
 }
 
+*, ::after, ::before {
+    box-sizing:border-box;
+}
+
 /* Header */
 
 .header {
@@ -266,4 +270,66 @@ main {
     @include phone {
         display:none;
     }
+}
+
+.product-card-title {
+    position:relative;
+    margin:16px 0;
+
+    h3 {
+        padding-right:20px;
+    }
+
+    .add-button {
+        width:20px;
+        height:20px;
+        position: absolute;
+        top:0;
+        right:0;
+        border-radius: 50%;
+
+        &::before {
+            content:"";
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            border:1px solid black;
+            border-radius: inherit;
+        }
+
+        .plus {
+            &::after, &::before {
+                content:"";
+                width:8px;
+                height: 2px;
+                position: absolute;
+                top:9px;
+                left:6px;
+                background:currentColor;
+
+            }
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.product-card-title:hover .add-button {
+    color:white;
+    background-color: black;
+}
+
+.product-card-sizes {
+    display:none;
+}
+
+.product-card-title:hover .product-card-price {
+    display:none;
+}
+
+.product-card-title:hover .product-card-sizes {
+    display:block;
 }
