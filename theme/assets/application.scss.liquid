@@ -241,3 +241,29 @@ main {
         object-fit: cover;
     }
 }
+
+.swiper-button-prev {
+    cursor: url('{{ "cursor-arrow-left.svg" | asset_url }}') 15 8, auto;
+}
+.swiper-button-next {
+    cursor: url('{{ "cursor-arrow-right.svg" | asset_url }}') 15 8, auto;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    position:absolute;
+    top:0;
+    width:25%;
+    height:100%;
+    margin-top:0;
+    outline-style: none;
+    box-shadow: none;
+    border-color:transparent;
+
+    &::after{
+        content:none;
+    }
+
+    @include phone {
+        display:none;
+    }
+}
