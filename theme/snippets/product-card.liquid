@@ -19,7 +19,7 @@
       <p class="product-card-price">{{ product.price | money }}</p>
       <p class="product-card-sizes">
         {% for size_option in product.options_by_name['Size'].values %}
-        {{ size_option }},{{% unless forloop.last %}},{{% endunless %}}
+        {{ size_option }}{{% unless forloop.last %}},{{% endunless %}}
         {% endfor%}
       </p>
       <div class="add-button">
