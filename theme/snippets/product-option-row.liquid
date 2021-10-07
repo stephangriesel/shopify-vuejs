@@ -5,7 +5,7 @@
     </div>
     <div class="product-option-list" v-if="option.visible">
         <template v-for="(value, index) in option.values">
-            <div class="production-option-item" @click="
+            <div class="product-option-item" @click="
                 selected[i] = value;
                 option.visible = false;
                 form.selections[i] = value;
