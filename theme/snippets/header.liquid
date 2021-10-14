@@ -32,10 +32,46 @@
         <a href="/" class="header-title">{{ shop.name }}</a>
         <div class="cart-button-container">
             <button class="cart-button">
-                <span>Cart</span>
+                <span>
+                    <template v-if="cart">
+                        Cart (${cart.item_count})
+                    </template>
+                </span>
             </button>
         </div>
     </div>
 
-    <div class="mini-cart"></div>
+    <div class="mini-cart">
+        {% render 'mini-cart' %}
+    </div>
 </header>
+
+<script>
+    if (document.querySelector('#header')) {
+        const headerCart = Vue.createApp({
+            delimiters: ['${', '}'],
+            data() {
+                return {
+                    cartData: store.state.cartState
+                }
+            },
+            methods: {
+
+            },
+            computed: {
+                miniCart() {
+                    return miniCartState.hidden
+                },
+                menuDrawer() {
+                    return menuState.hidden
+                },
+                cart() {
+                    return this.cartData[0]
+                }
+            },
+            created() {
+                store.getCart()
+            }
+        }).mount('#header')
+    }
+</script>

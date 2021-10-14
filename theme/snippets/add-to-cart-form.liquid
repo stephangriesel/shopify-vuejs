@@ -56,6 +56,7 @@
                     axios.post('/cart/add.js', data)
                         .then((response) => {
                             console.log("add to cart response...", response)
+                            store.getCart()
                         })
                         .catch(error => {
                             console.log(error)
