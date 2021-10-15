@@ -435,3 +435,25 @@ main {
 .mini-cart.hidden{
     transform:translateX(100%)
 }
+
+.mini-cart {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    height:100vh;
+    width:100%;
+    z-index: 99;
+    max-width:300px;
+    background-color: white;
+    transition-property: transform;
+}
+
+.mini-cart-image-wrapper {
+    width:140px;
+    margin-right:25px;
+
+    img {
+        width:100%;
+    }
+}
