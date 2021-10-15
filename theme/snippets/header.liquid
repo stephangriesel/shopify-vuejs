@@ -49,7 +49,7 @@
 <script>
 
     // more about handler & target: https://v3.vuejs.org/guide/reactivity.html#what-is-reactivity 
-    console.log(store.state.cartState)
+    console.log("cart state: ", store.state.cartState)
 
     if (document.querySelector('#header')) {
         const headerCart = Vue.createApp({
@@ -60,7 +60,9 @@
                 }
             },
             methods: {
-
+                toggleMiniCart() {
+                    toggleMiniCart().openCart()
+                }
             },
             computed: {
                 miniCart() {
