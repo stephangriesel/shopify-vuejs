@@ -86,6 +86,10 @@
                             store.getCart()
                         })
                         .catch(error => console.log(error))
+                },
+                money(value) {
+                    if (!value) return 0
+                    return "€" + (value / 100).toFixed(2)
                 }
             },
             computed: {
