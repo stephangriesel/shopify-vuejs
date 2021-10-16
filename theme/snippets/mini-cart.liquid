@@ -26,6 +26,15 @@
                 </div>
             </div>
         </div>
+        <div class="checkout-wrapper">
+            <div class="checkout-subtotal">
+                <p>Subtotal: </p>
+                <p>${ money(cart.total_price) }</p>
+            </div>
+            <div class="checkout-button">
+                <a href="/checkout">Checkout</a>
+            </div>
+        </div>
     </template>
 
     <template v-else>
