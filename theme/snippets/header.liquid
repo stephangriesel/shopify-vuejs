@@ -25,9 +25,15 @@
 <header class="header" id="header">
     <div class="header-inner flex space-between">
         <div class="menu-drawer">
+            {% unless template == "product" %}
             <button class="menu-button">
                 <span>Menu</span>
             </button>
+            {% else %}
+            <a href="javascript:history.back()" class="menu-button">
+                <span>Back</span>
+            </a>
+            {% endunless %}
         </div>
         <a href="/" class="header-title">{{ shop.name }}</a>
 
