@@ -20,8 +20,8 @@
                     </div>
                     <div class="mini-cart-quantity">
                         <input type="text" v-model="item.quantity" />
-                        <button class="mini-cart-quantity-button">-</button>
-                        <button class="mini-cart-quantity-button">+</button>
+                        <button class="mini-cart-quantity-button" @click="decrement(item)">-</button>
+                        <button class="mini-cart-quantity-button" @click="increment(item)">+</button>
                     </div>
                 </div>
             </div>
