@@ -43,6 +43,7 @@
     </div>
 
     <div class="mini-cart" :class="{ hidden: miniCart }">
+        <button class="mini-cart-close-button" @click="toggleMiniCart">X</button>
         {% render 'mini-cart' %}
     </div>
 </header>
