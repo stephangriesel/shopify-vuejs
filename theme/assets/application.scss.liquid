@@ -149,6 +149,15 @@ button, input, option, textarea {
     outline:none;
 }
 
+.section {
+    padding:25px;
+}
+
+img, picture, svg {
+    max-width:100%;
+    vertical-align: middle;
+}
+
 /* Header */
 
 .header {
@@ -611,4 +620,32 @@ button, input, option, textarea {
     padding-top:42px;
     font-size:24px;
     line-height:1.5;
+}
+
+/* Hero */
+
+.hero-image {
+    @include phone {
+        height:270px;
+
+        img {
+            height:100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/* Rich Text */
+
+.heading {
+    font-size:30px;
+
+}
+
+.center {
+    text-align: center;
+}
+
+.padding-top {
+    padding-top:25px;
 }
