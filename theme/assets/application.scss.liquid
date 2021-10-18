@@ -649,3 +649,34 @@ img, picture, svg {
 .padding-top {
     padding-top:25px;
 }
+
+/* Image Text */
+
+.image-with-text {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include phone {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.image-with-text.reverse {
+    direction: rtl;
+}
+
+.image-with-text-description-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding:25px;
+    direction: ltr;
+}
+
+.image-with-text-body {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
