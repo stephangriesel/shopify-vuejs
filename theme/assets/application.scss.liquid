@@ -632,9 +632,10 @@ img, picture, svg {
     height:100vh;
     width:100%;
     z-index: 99;
+    max-width:350px;
     background: #FFF;
     padding: 72px 25px 25px 25px;
-    transition: transform cubic-bezier(0.165, 0.84, 0.44, 1), left 0.5s 0s;
+    transition: transform 0.9s cubic-bezier(0.165, 0.84, 0.44, 1), left 0.5s 0s;
 
     @include phone {
         position:fixed;
@@ -644,6 +645,17 @@ img, picture, svg {
 
 .menu-drawer.hidden {
     transform:translateX(-100%);
+}
+
+.menu-drawer-inner {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-button {
+    z-index: 999;
 }
 
 /* Hero */
