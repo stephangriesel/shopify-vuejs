@@ -33,6 +33,18 @@
         </div>
     </div>
 
+    <div class="header-mobile">
+        <a href="/" class="header-title">{{ shop.name}}</a>
+        <div class="mobile-nav">
+            <button class="mobile-nav-button" @click="toggleMenu">
+                <span>Menu</span>
+            </button>
+            <button class="mobile-nav-button" @click="toggleMiniCart">
+                <span>Cart</span>
+            </button>
+        </div>
+    </div>
+
     <div class="menu-drawer" :class="{ hidden: menuDrawer }">
         {% render 'menu-drawer' %}
     </div>
