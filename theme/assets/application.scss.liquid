@@ -253,10 +253,31 @@ img, picture, svg {
     user-select: none;
 }
 
+.product-option-label::before, .add-to-cart-button::before {
+    // content:'';
+    // width:11px;
+    // height:11px;
+    // position:absolute;
+    // right:25px;
+    // top:50%;
+    // transform: translateY(-50%);
+    // background: currentColor;
+    // border-radius: 50%;
+}
+
 /* Start Collection */
 
 .collection-list {
     flex-wrap: wrap;
+}
+
+.collection-title {
+    padding:60px 0;
+    font-size: 24px;
+    margin-bottom:32px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height:1.2;
 }
 
 /* Product Card */
@@ -773,6 +794,16 @@ img, picture, svg {
     padding-top: 25px;
     padding-bottom:60px;
     border-top:solid #000 1px;
+
+    @include phone {
+        flex-direction: column;
+
+    }
+}
+
+.footer-left, .footer-right {
+    width: 100%;
+    padding-bottom:25px;
 }
 
 @media (hover:hover) and (pointer: fine){
