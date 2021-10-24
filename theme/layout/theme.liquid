@@ -17,7 +17,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <script src="https://unpkg.com/vue@3.0.5"></script> Dev Version -->
   <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script> <!-- Prod Version -->
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  <!-- {{ 'application.scss.css' | asset_url | stylesheet_tag }} -->
+  {{ 'application.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
 </head>
 
